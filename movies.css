@@ -75,9 +75,20 @@
 }
 
 .card {
+	position: relative;
 	height: 400px;
 	width: 440px;
 	border: 1px solid yellow;
+}
+
+.card .row {
+	position: absolute;
+	bottom: 10px;
+	gap: 30px;
+}
+
+.card button {
+	width: 5rem;
 }
 
 
