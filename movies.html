@@ -9,29 +9,33 @@
 	<link rel="stylesheet" href="movies.css">
 </head>
 <div class="page-wrapper">
+	<header>
+		<h1>Movie Database</h1>
+		<button type="button">Add a Movie</button>
+	</header>
 	<div class="container">
-		<header class="row">
-			<h1>Movie Database</h1>
-			<div class="row" id="modify"><button type="button">Add a Movie</button></div>
-		</header>
+		<main class="row">
+			<div class="card">
+			</div>
+		</main>
 		<form action="/add-movie" method="post" class="column modify">
 			<h4>Add Movie</h4>
 			<ul>
 				<li>
 					<label for="add-title">Title</label>
-					<input type="text" id="add-title" name="add-title" />
+					<input type="text" id="add-title" name="add-title"/>
 				</li>
 				<li>
 					<label for="add-genre">Genre</label>
-					<input type="text" id="add-genre" name="add-genre" />
+					<input type="text" id="add-genre" name="add-genre"/>
 				</li>
 				<li>
 					<label for="add-rating">Rating</label>
-					<input type="text" id="add-rating" name="add-rating" />
+					<input type="text" id="add-rating" name="add-rating"/>
 				</li>
 				<li>
 					<label for="add-summary">Summary</label>
-					<input type="text" id="add-summary" name="add-summary" />
+					<input type="text" id="add-summary" name="add-summary"/>
 				</li>
 			</ul>
 			<button type="submit">Add</button>
@@ -40,26 +44,29 @@
 			<h4>Edit Movie</h4>
 			<ul>
 				<li>
-					<label for="edit-title">Title:</label>
-					<input type="text" id="edit-title" name="title" />
+					<label for="edit-title">Title</label>
+					<input type="text" id="edit-title" name="edit-title"/>
 				</li>
 				<li>
-					<label for="edit-rating">Rating:</label>
-					<input type="text" id="edit-rating" name="rating" />
+					<label for="edit-genre">Genre</label>
+					<input type="text" id="edit-genre" name="edit-genre"/>
+				</li>
+				<li>
+					<label for="edit-rating">Rating</label>
+					<input type="text" id="edit-rating" name="edit-rating"/>
+				</li>
+				<li>
+					<label for="edit-summary">Summary</label>
+					<input type="text" id="edit-summary" name="edit-summary"/>
+				</li>
 			</ul>
-			</li><button type="submit">Edit</button>
+			<button type="submit">Edit</button>
 		</form>
-
-		<main class="row">
-			<div class="card column">
-			</div>
-		</main>
-<!--		<span class="loader"></span>-->
+		<!--		<span class="loader"></span>-->
 	</div>
-
 </div>
 
 <body>
-<script type="module" src="js/movies-main.js" ></script>
+<script type="module" src="js/movies-main.js"></script>
 </body>
 </html>

@@ -12,12 +12,15 @@
 /*CLASSES*/
 
 .page-wrapper {
+	min-height: 100dvh;
+	background-color: #312f2f;
+}
+
+.container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-content: center;
-	height: 100dvh;
-	background-color: #312f2f;
+	align-items: center;
 }
 
 .row {
@@ -72,8 +75,9 @@
 }
 
 .card {
-
-
+	height: 400px;
+	width: 440px;
+	border: 1px solid yellow;
 }
 
 
@@ -85,10 +89,16 @@
 /*TAGS*/
 
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+header button {
+	width: 5rem;
+	font-size: .75em;
 }
 
 h1, p {
@@ -105,14 +115,19 @@ button {
 	padding: 8px 5px;
 	cursor: pointer;
 	border: 2px solid #d5adad;
-	border-radius: 1em;
+	border-radius: .25em;
 	width: 10rem;
 	font-style: italic;
 }
 
+form {
+
+}
+
 form button {
 	width: 5rem;
-	padding: 4px;git check
+	padding: 4px;
+	margin: 10px;
 }
 
 li {
