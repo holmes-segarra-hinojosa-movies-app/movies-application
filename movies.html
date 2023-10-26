@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</main>
-		<form action="/add-movie" method="post" class="column modify">
+		<form  method="post" class="column modify" id="addForm">
 			<h4>Add Movie</h4>
 			<ul>
 				<li>
@@ -42,9 +42,9 @@
 					<input type="text" id="add-summary" name="add-summary"/>
 				</li>
 			</ul>
-			<button type="submit">Add</button>
+			<button type="submit" class="add-btn">Add</button>
 		</form>
-		<form action="/edit-movie" method="post" class="column modify">
+		<form method="post" class="column modify">
 			<h4>Edit Movie</h4>
 			<ul>
 				<li>
@@ -64,7 +64,7 @@
 					<input type="text" id="edit-summary" name="edit-summary"/>
 				</li>
 			</ul>
-			<button type="submit">Edit</button>
+			<button type="submit" class="edit-btn">Edit</button>
 		</form>
 		<!--		<span class="loader"></span>-->
 	</div>
