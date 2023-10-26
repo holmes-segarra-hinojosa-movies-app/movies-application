@@ -11,18 +11,19 @@ export function getMovies() {
 	}
 }
 
-export function creatMovie(newMovie) {
+export const creatMovie = async function (movie) {
 	try {
+		const url = `${MOVIE_HOST}/movies`;
 		const options = {
 			method: "POST",
 			headers: {
 				"Content-type": "application/json"
 			},
-			body: JSON.stringify(newMovie)
-		}
-		return fetch(`${MOVIE_HOST}/movies`, options)
-			.then(response => response.json())
-			.then(newMovie => newMovie);
+			body: JSON.stringify(movie)
+		};
+		const response = await fetch(url, options);
+		const newMovie = await response.json();
+		return newMovie;
 	} catch(error) {
 		console.error(error);
 	}
@@ -48,7 +49,7 @@ export async function updateMovie (id, movie){
 
 export const deleteMovie = async(id)=>{
 	try {
-		const url = `${MOVIE_HOST}/MOVIES/${id}`
+		const url = `${MOVIE_HOST}/movies/${id}`
 		const options = {
 			method: 'DELETE'
 		};
