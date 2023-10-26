@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,300&display=swap');
+
+* {
+	box-sizing: border-box;
+	padding: unset;
+	margin: unset;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+}
+
+/*CLASSES*/
+
+.page-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	height: 100dvh;
+	background-color: #312f2f;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.column {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.loader {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: inline-block;
+	border-top: 4px solid #FFF;
+	border-right: 4px solid transparent;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+.loader::after {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border-left: 4px solid #FF3D00;
+	border-bottom: 4px solid transparent;
+	animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.card {
+
+
+}
+
+
+/*IDs*/
+#modify {
+	gap: 20px;
+}
+
+/*TAGS*/
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 2em;
+}
+
+h1, p {
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 1rem;
+	font-size: 2em;
+}
+
+button {
+	color: black;
+	padding: 8px 5px;
+	cursor: pointer;
+	border: 2px solid #d5adad;
+	border-radius: 1em;
+	width: 10rem;
+	font-style: italic;
+}
+
+form button {
+	width: 5rem;
+	padding: 4px;git check
+}
+
+li {
+	list-style-type: none;
+}
+
+main {
+
+}
+
