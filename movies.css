@@ -6,6 +6,8 @@
 	--delete-btn-bg-color: #ec4e4e;
 	--card-bg-color: rgba(255, 255, 255, 0.27);
 	--header-bg-color: rgba(237, 234, 234, 0.98);
+	--form-bg-color: #1a1a1a;
+	--form-text-color: #fbf9f9;
 }
 
 * {
@@ -20,8 +22,18 @@
 
 .page-wrapper {
 	min-height: 100dvh;
+}
+
+.page-wrapper::before {
+	content: "";
 	background-image: url("img/movie-theater.jpg");
 	background-position: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.65;
 }
 
 .container {
@@ -90,6 +102,7 @@
 	height: 400px;
 	width: 440px;
 	border: 2px solid var(--card-border-color);
+	border-radius: 1rem;
 	background-color: var(--card-bg-color);
 }
 
@@ -124,22 +137,17 @@
 	z-index: 2;
 }
 
-form.modify {
-	justify-content: space-between;
-	gap: 20px;
-	border: 2px solid var(--card-border-color);
-	background-color: var(--header-bg-color);
-}
 
 /*TAGS*/
 
 header {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1rem;
-	background-color: var(--header-bg-color);
+	padding: 0.5rem;
+	background-color: white;
 	border-bottom: 2px solid var(--btn-border-color);
 }
 
@@ -170,10 +178,15 @@ button {
 input {
 	color: black;
 }
-
-form {
-	border: 2px solid white;
+form.modify {
+	justify-content: space-between;
+	width: 450px;
 	padding: 20px;
+	gap: 20px;
+	border: 2px solid var(--card-border-color);
+	border-radius: 3rem;
+	background-color: var(--form-bg-color);
+	color: var(--form-text-color);
 }
 
 form button {
@@ -182,9 +195,17 @@ form button {
 	margin: 10px;
 }
 
+ul {
+	width: 80%;
+}
+
 li {
 	display: flex;
 	list-style-type: none;
 	justify-content: space-between;
 	margin: 10px 0;
+}
+
+li textarea {
+	resize: none;
 }
