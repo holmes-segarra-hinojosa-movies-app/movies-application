@@ -39,10 +39,13 @@
 }
 
 .hidden {
-	display: none;
+	visibility: hidden;
 }
 
 .loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -56,8 +59,8 @@
 	content: '';
 	box-sizing: border-box;
 	position: absolute;
-	left: 0;
 	top: 0;
+	left: 0;
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -91,11 +94,15 @@
 	width: 5rem;
 }
 
-
-/*IDs*/
-#modify {
+form.modify {
+	justify-content: space-between;
 	gap: 20px;
 }
+
+
+
+
+/*IDs*/
 
 /*TAGS*/
 
@@ -136,7 +143,8 @@ input {
 }
 
 form {
-
+	border: 2px solid white;
+	padding: 20px;
 }
 
 form button {
@@ -146,10 +154,8 @@ form button {
 }
 
 li {
+	display: flex;
 	list-style-type: none;
+	justify-content: space-between;
+	margin: 10px 0;
 }
-
-main {
-
-}
-
