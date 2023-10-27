@@ -53,6 +53,7 @@ async function main() {
 
 		let makeEditBtn = document.createElement('button')
 		makeEditBtn.classList.add('edit-btn',`edit-btn-${[i]}`)
+		makeEditBtn.setAttribute('data', `${id}`)
 		makeEditBtn.innerText = 'Edit';
 		btnDivEdit.appendChild(makeEditBtn)
 
