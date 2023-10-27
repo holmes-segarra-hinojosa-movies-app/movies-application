@@ -62,44 +62,31 @@
 	visibility: hidden;
 }
 
-.loader {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 48px;
-	height: 48px;
+
+#loader {
+	border: 12px solid #f3f3f3;
 	border-radius: 50%;
-	display: inline-block;
-	border-top: 4px solid #FFF;
-	border-right: 4px solid transparent;
-	box-sizing: border-box;
-	animation: rotation 1s linear infinite;
+	border-top: 12px solid #444444;
+	width: 70px;
+	height: 70px;
+	animation: spin 1s linear infinite;
 }
-.loader::after {
-	content: '';
-	box-sizing: border-box;
+
+.center {
 	position: absolute;
 	top: 0;
+	bottom: 0;
 	left: 0;
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	border-left: 4px solid #FF3D00;
-	border-bottom: 4px solid transparent;
-	animation: rotation 0.5s linear infinite reverse;
+	right: 0;
+	margin: auto;
 }
-@keyframes rotation {
-	0% {
-		transform: rotate(0deg);
-	}
+
+@keyframes spin {
 	100% {
 		transform: rotate(360deg);
 	}
 }
-
 .card {
-	/*display: flex;*/
-	/*flex-direction: column;*/
 	position: relative;
 	height: 400px;
 	width: 440px;
@@ -115,7 +102,6 @@
 	left: 22.5%;
 	bottom: 10px;
 	gap: 30px;
-	/*margin-left: 50em;*/
 }
 
 .card button {

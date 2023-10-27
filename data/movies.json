@@ -77,10 +77,10 @@
       "id": 11
     },
     {
-      "title": "Test 1",
-      "genre": "Comedy",
-      "rating": "3",
-      "movieSummary": "Really Good",
+      "title": "add test",
+      "genre": "comedy",
+      "rating": "5",
+      "movieSummary": "this is my summary",
       "id": 12
     }
   ]

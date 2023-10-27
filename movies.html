@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Movies, Movies, Movies</title>
 	<link rel="stylesheet" href="movies.css">
 </head>
+<body>
 <div class="page-wrapper">
-	<span class="loader hidden"></span>
+	<div id="loader" class="center"></div>
 	<header>
 		<h1>Movie Database</h1>
 		<button type="button" id="addMovie-btn">Add a Movie</button>
@@ -17,7 +17,7 @@
 	<div class="container">
 		<main class="row">
 		</main>
-		<form  method="post" class="column modify hidden" id="add-form">
+		<form method="post" class="column modify hidden" id="add-form">
 			<h4>Add Movie</h4>
 			<ul>
 				<li>
@@ -57,7 +57,7 @@
 				<li>
 					<label for="edit-summary">Summary</label>
 					<textarea name="edit-summary" id="edit-summary" cols="19" rows="3"></textarea>
-<!--					<input type="text" id="edit-summary" name="edit-summary"/>-->
+					<!--					<input type="text" id="edit-summary" name="edit-summary"/>-->
 				</li>
 			</ul>
 			<button type="submit" class="edit-btn">Edit</button>
@@ -65,7 +65,7 @@
 	</div>
 </div>
 
-<body>
+
 <script type="module" src="js/movies-main.js"></script>
 </body>
 </html>
