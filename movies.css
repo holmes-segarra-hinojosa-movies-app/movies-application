@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,300&display=swap');
 
+:root {
+	--card-border-color: rgba(115, 182, 199, 0.24);
+	--btn-border-color: rgba(109, 114, 113, 0.76);
+	--delete-btn-bg-color: #ec4e4e;
+	--card-bg-color: rgba(255, 255, 255, 0.27);
+	--header-bg-color: rgba(237, 234, 234, 0.98);
+	--form-bg-color: #1a1a1a;
+	--form-text-color: #fbf9f9;
+}
+
 * {
 	box-sizing: border-box;
 	padding: unset;
 	margin: unset;
-	color: white;
 	font-family: 'Lato', sans-serif;
 	font-size: 20px;
 }
@@ -13,7 +22,18 @@
 
 .page-wrapper {
 	min-height: 100dvh;
-	background-color: #312f2f;
+}
+
+.page-wrapper::before {
+	content: "";
+	background-image: url("img/movie-theater.jpg");
+	background-position: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.65;
 }
 
 .container {
@@ -39,10 +59,13 @@
 }
 
 .hidden {
-	display: none;
+	visibility: hidden;
 }
 
 .loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -56,8 +79,8 @@
 	content: '';
 	box-sizing: border-box;
 	position: absolute;
-	left: 0;
 	top: 0;
+	left: 0;
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -78,7 +101,9 @@
 	position: relative;
 	height: 400px;
 	width: 440px;
-	border: 1px solid yellow;
+	border: 2px solid var(--card-border-color);
+	border-radius: 1rem;
+	background-color: var(--card-bg-color);
 }
 
 .card .row {
@@ -91,20 +116,39 @@
 	width: 5rem;
 }
 
+.delete-btn {
+	border-color: var(--delete-btn-bg-color);
+}
 
 /*IDs*/
-#modify {
-	gap: 20px;
+
+#add-form, #edit-form {
+	position: absolute;
+	top: auto;
+	left: auto;
+	z-index: 1;
 }
+
+#add-form {
+	z-index: 1;
+}
+
+#edit-form {
+	z-index: 2;
+}
+
 
 /*TAGS*/
 
 header {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1rem;
+	padding: 0.5rem;
+	background-color: white;
+	border-bottom: 2px solid var(--btn-border-color);
 }
 
 header button {
@@ -125,7 +169,7 @@ button {
 	color: black;
 	padding: 8px 5px;
 	cursor: pointer;
-	border: 2px solid #d5adad;
+	border: 2px solid var(--btn-border-color);
 	border-radius: .25em;
 	width: 10rem;
 	font-style: italic;
@@ -134,9 +178,15 @@ button {
 input {
 	color: black;
 }
-
-form {
-
+form.modify {
+	justify-content: space-between;
+	width: 450px;
+	padding: 20px;
+	gap: 20px;
+	border: 2px solid var(--card-border-color);
+	border-radius: 3rem;
+	background-color: var(--form-bg-color);
+	color: var(--form-text-color);
 }
 
 form button {
@@ -145,11 +195,17 @@ form button {
 	margin: 10px;
 }
 
+ul {
+	width: 80%;
+}
+
 li {
+	display: flex;
 	list-style-type: none;
+	justify-content: space-between;
+	margin: 10px 0;
 }
 
-main {
-
+li textarea {
+	resize: none;
 }
-
