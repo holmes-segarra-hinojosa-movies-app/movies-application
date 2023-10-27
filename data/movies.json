@@ -82,13 +82,6 @@
       "rating": "3",
       "movieSummary": "Really Good",
       "id": 12
-    },
-    {
-      "title": "Test 2",
-      "genre": "Horror",
-      "rating": "2",
-      "movieSummary": "Scary Freakin Movie",
-      "id": 13
     }
   ]
 }

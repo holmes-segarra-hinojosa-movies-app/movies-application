@@ -98,6 +98,8 @@
 }
 
 .card {
+	/*display: flex;*/
+	/*flex-direction: column;*/
 	position: relative;
 	height: 400px;
 	width: 440px;
@@ -106,10 +108,14 @@
 	background-color: var(--card-bg-color);
 }
 
-.card .row {
+.btn-div{
+	display: flex;
+	justify-content: center;
 	position: absolute;
+	left: 22.5%;
 	bottom: 10px;
 	gap: 30px;
+	/*margin-left: 50em;*/
 }
 
 .card button {
@@ -124,7 +130,7 @@
 
 #add-form, #edit-form {
 	position: absolute;
-	top: auto;
+	top: 25%;
 	left: auto;
 	z-index: 1;
 }
@@ -163,6 +169,11 @@ h1, p {
 h1 {
 	margin-bottom: 1rem;
 	font-size: 2em;
+}
+
+h3{
+	text-align: center;
+	font-size: 1.5em;
 }
 
 button {

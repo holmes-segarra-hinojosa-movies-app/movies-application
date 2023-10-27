@@ -12,14 +12,10 @@
 	<span class="loader hidden"></span>
 	<header>
 		<h1>Movie Database</h1>
-		<button type="button">Add a Movie</button>
+		<button type="button" id="addMovie-btn">Add a Movie</button>
 	</header>
 	<div class="container">
 		<main class="row">
-			<div class="card">
-				<div class="modify row">
-				</div>
-			</div>
 		</main>
 		<form  method="post" class="column modify hidden" id="add-form">
 			<h4>Add Movie</h4>
@@ -43,7 +39,7 @@
 			</ul>
 			<button type="submit" class="add-btn">Add</button>
 		</form>
-		<form method="post" class="column modify" id="edit-form">
+		<form method="post" class="column modify hidden" id="edit-form">
 			<h4>Edit Movie</h4>
 			<ul>
 				<li>
