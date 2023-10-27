@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="movies.css">
 </head>
 <div class="page-wrapper">
+	<span class="loader hidden"></span>
 	<header>
 		<h1>Movie Database</h1>
 		<button type="button">Add a Movie</button>
@@ -16,9 +17,11 @@
 	<div class="container">
 		<main class="row">
 			<div class="card">
+				<div class="modify row">
+				</div>
 			</div>
 		</main>
-		<form  method="post" class="column modify" id="addForm">
+		<form  method="post" class="column modify hidden" id="add-form">
 			<h4>Add Movie</h4>
 			<ul>
 				<li>
@@ -40,7 +43,7 @@
 			</ul>
 			<button type="submit" class="add-btn">Add</button>
 		</form>
-		<form method="post" class="column modify">
+		<form method="post" class="column modify" id="edit-form">
 			<h4>Edit Movie</h4>
 			<ul>
 				<li>
@@ -57,12 +60,12 @@
 				</li>
 				<li>
 					<label for="edit-summary">Summary</label>
-					<input type="text" id="edit-summary" name="edit-summary"/>
+					<textarea name="edit-summary" id="edit-summary" cols="19" rows="3"></textarea>
+<!--					<input type="text" id="edit-summary" name="edit-summary"/>-->
 				</li>
 			</ul>
 			<button type="submit" class="edit-btn">Edit</button>
 		</form>
-		<!--		<span class="loader"></span>-->
 	</div>
 </div>
 
