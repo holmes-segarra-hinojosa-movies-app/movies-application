@@ -18,12 +18,12 @@
 		<main class="row">
 			<div class="card">
 				<div class="modify row">
-					<button type="button">Edit</button>
-					<button type="button">Delete</button>
+					<button type="button" class="edit-btn">Edit</button>
+					<button type="button" class="delete-btn">Delete</button>
 				</div>
 			</div>
 		</main>
-		<form  method="post" class="column modify" id="addForm">
+		<form  method="post" class="column modify hidden" id="add-form">
 			<h4>Add Movie</h4>
 			<ul>
 				<li>
@@ -45,7 +45,7 @@
 			</ul>
 			<button type="submit" class="add-btn">Add</button>
 		</form>
-		<form method="post" class="column modify">
+		<form method="post" class="column modify hidden" id="edit-form">
 			<h4>Edit Movie</h4>
 			<ul>
 				<li>

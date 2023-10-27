@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,300&display=swap');
 
+:root {
+	--card-border-color: rgba(115, 182, 199, 0.24);
+	--btn-border-color: rgba(109, 114, 113, 0.76);
+	--delete-btn-bg-color: #ec4e4e;
+	--card-bg-color: rgba(255, 255, 255, 0.27);
+	--header-bg-color: rgba(237, 234, 234, 0.98);
+}
+
 * {
 	box-sizing: border-box;
 	padding: unset;
 	margin: unset;
-	color: white;
 	font-family: 'Lato', sans-serif;
 	font-size: 20px;
 }
@@ -13,7 +20,8 @@
 
 .page-wrapper {
 	min-height: 100dvh;
-	background-color: #312f2f;
+	background-image: url("img/movie-theater.jpg");
+	background-position: center;
 }
 
 .container {
@@ -81,7 +89,8 @@
 	position: relative;
 	height: 400px;
 	width: 440px;
-	border: 1px solid yellow;
+	border: 2px solid var(--card-border-color);
+	background-color: var(--card-bg-color);
 }
 
 .card .row {
@@ -94,15 +103,33 @@
 	width: 5rem;
 }
 
+.delete-btn {
+	border-color: var(--delete-btn-bg-color);
+}
+
+/*IDs*/
+
+#add-form, #edit-form {
+	position: absolute;
+	top: auto;
+	left: auto;
+	z-index: 1;
+}
+
+#add-form {
+	z-index: 1;
+}
+
+#edit-form {
+	z-index: 2;
+}
+
 form.modify {
 	justify-content: space-between;
 	gap: 20px;
+	border: 2px solid var(--card-border-color);
+	background-color: var(--header-bg-color);
 }
-
-
-
-
-/*IDs*/
 
 /*TAGS*/
 
@@ -112,6 +139,8 @@ header {
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
+	background-color: var(--header-bg-color);
+	border-bottom: 2px solid var(--btn-border-color);
 }
 
 header button {
@@ -132,7 +161,7 @@ button {
 	color: black;
 	padding: 8px 5px;
 	cursor: pointer;
-	border: 2px solid #d5adad;
+	border: 2px solid var(--btn-border-color);
 	border-radius: .25em;
 	width: 10rem;
 	font-style: italic;
