@@ -124,6 +124,9 @@
 	position: absolute;
 	top: 25%;
 	left: auto;
+}
+
+#add-form {
 	z-index: 1;
 }
 

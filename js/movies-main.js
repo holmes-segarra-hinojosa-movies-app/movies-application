@@ -10,7 +10,7 @@ async function main() {
 	let showLoad = document.querySelector('#loader')
 	showLoad.style.display = 'none';
 
-	for(let i=0; i < allMovies.length; i++){
+	for(let i= 0; i < allMovies.length; i++){
 		let id = allMovies[i].id
 		let title = allMovies[i].title
 		let genre = allMovies[i].genre
@@ -30,9 +30,9 @@ async function main() {
 		let showGenre = document.createElement('p')
 		showGenre.setAttribute('class', `genre-${[i]}`)
 		let showRating = document.createElement('p')
-		showRating.setAttribute('class', `rating-${[i]}`)
+		showRating.setAttribute('class', `rating-${i}`)
 		let showSummary = document.createElement('p')
-		showRating.setAttribute('class', `summary-${[i]}`)
+		showRating.setAttribute('class', `summary-${i}`)
 
 
 		showTitle.innerText = title;
@@ -98,31 +98,34 @@ async function main() {
 // TODO FIX EDIT FUNCTIONALITY *********
 	let showEditForm = document.querySelector('#edit-form')
 	for(let i= 0; i < allMovies.length; i++) {
-		let id = allMovies[i].id
-		let title = allMovies[i].title
-		let genre = allMovies[i].genre
-		let rating = allMovies[i].rating
-		let summary = allMovies[i].movieSummary
-		let poster = allMovies[i].posterURL
+		// let id = allMovies[i].id
+		// let title = allMovies[i].title
+		// let genre = allMovies[i].genre
+		// let rating = allMovies[i].rating
+		// let summary = allMovies[i].movieSummary
+		// let poster = allMovies[i].posterURL
 
 
-// TODO FIX EDIT FUNCTIONALITY
 		let editMovieBtn = document.querySelector(`.edit-btn-${[i]}`)
-		// let editMovieBtn = document.querySelector(`[data-id]`)
-		editMovieBtn.addEventListener('click', async function () {
 
-			alert('click' + `edit btn #${[i]}`)
+		editMovieBtn.addEventListener('click', async function (event) {
 			showEditForm.classList.toggle('hidden')
-
+			let editCard = event.target.parentElement.parentElement;
+			console.log(editCard);
 
 			let titleEdit = document.querySelector('#edit-title')
 			let genreEdit = document.querySelector('#edit-genre')
 			let ratingEdit = document.querySelector('#edit-rating')
 			let summaryEdit = document.querySelector('#edit-summary')
+
+			titleEdit.value = editCard.querySelector('h3').innerText
+			genreEdit.value = editCard.querySelector(`p.genre-${[i]}`).innerText
+			ratingEdit.value = editCard.querySelector('p:nth-of-type(2)').innerText
+			summaryEdit.value = editCard.querySelector('p:last-of-type').innerText
 		})
 	}
 
-	for(let i=0; i < allMovies.length; i++) {
+	for(let i= 0; i < allMovies.length; i++) {
 		let deleteMovieButton = document.querySelector(`.delete-btn-${[i]}`)
 		//DELETE MOVIE
 		deleteMovieButton.addEventListener('click', async function () {

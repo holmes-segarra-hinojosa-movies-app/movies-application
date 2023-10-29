@@ -82,6 +82,13 @@
       "rating": "5",
       "movieSummary": "this is my summary",
       "id": 12
+    },
+    {
+      "title": "A Damn Good Movie",
+      "genre": "drama",
+      "rating": "10",
+      "movieSummary": "A movie with a damn good plot",
+      "id": 13
     }
   ]
 }
