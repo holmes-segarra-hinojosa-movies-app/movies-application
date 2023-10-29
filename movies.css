@@ -9,6 +9,8 @@
 	--header-bg-color: rgba(237, 234, 234, 0.98);
 	--form-bg-color: #1a1a1a;
 	--form-text-color: #fbf9f9;
+	--background-gradient-top: #f3593f;
+	--background-gradient-bottom: rgb(222, 222, 9);
 }
 
 * {
@@ -23,18 +25,7 @@
 
 .page-wrapper {
 	min-height: 100dvh;
-}
-
-.page-wrapper::before {
-	content: "";
-	background-image: url("img/movie-theater.jpg");
-	background-position: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0.65;
+	background-image: linear-gradient(var(--background-gradient-top), var(--background-gradient-bottom));
 }
 
 .container {

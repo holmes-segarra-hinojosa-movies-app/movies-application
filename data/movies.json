@@ -82,6 +82,13 @@
       "rating": "5",
       "movieSummary": "this is my summary",
       "id": 12
+    },
+    {
+      "title": "add test",
+      "genre": "comedy",
+      "rating": "8",
+      "movieSummary": "A movie with a damn good plot",
+      "id": 13
     }
   ]
 }
