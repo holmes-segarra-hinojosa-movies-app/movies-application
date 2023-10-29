@@ -82,13 +82,6 @@
       "rating": "5",
       "movieSummary": "this is my summary",
       "id": 12
-    },
-    {
-      "title": "here's another one",
-      "genre": "science fiction ",
-      "rating": "10",
-      "movieSummary": "sad",
-      "id": 13
     }
   ]
 }

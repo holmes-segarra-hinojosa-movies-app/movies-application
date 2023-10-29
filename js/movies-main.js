@@ -57,7 +57,6 @@ async function main() {
 
 		let makeEditBtn = document.createElement('button')
 		makeEditBtn.classList.add('edit-btn',`edit-btn-${[i]}`)
-		// makeEditBtn.setAttribute('data', `${id}`)
 		makeEditBtn.setAttribute('data-id', `${id}`)
 
 		makeEditBtn.innerText = 'Edit';
@@ -83,7 +82,6 @@ async function main() {
 
 	let addMovieBtn = document.querySelector('.add-btn')
 	addMovieBtn.addEventListener('click', async function(){
-		// alert('click')
 		let title = document.querySelector('#add-title').value
 		let genre = document.querySelector('#add-genre').value
 		let rating = document.querySelector('#add-rating').value
@@ -120,7 +118,6 @@ async function main() {
 			let genreEdit = document.querySelector('#edit-genre')
 			let ratingEdit = document.querySelector('#edit-rating')
 			let summaryEdit = document.querySelector('#edit-summary')
-			// let idEdit = document.querySelector('#edit-id')
 			let id = editCard.dataset.id;
 
 
@@ -136,8 +133,6 @@ async function main() {
 			genreEdit.value = editCard.querySelector(`p.genre-${[i]}`).innerText
 			ratingEdit.value = editCard.querySelector('p:nth-of-type(2)').innerText
 			summaryEdit.value = editCard.querySelector('p:last-of-type').innerText
-			// id = editCard.querySelector()
-			// console.log(id);
 
 
 
@@ -147,7 +142,6 @@ async function main() {
 
 			function saveEditedInfo(event) {
 				event.preventDefault();
-				alert('hi');
 				let idEdit = document.querySelector('#edit-id').value
 				let newTitle = document.querySelector('#edit-title').value
 				let newGenre = document.querySelector('#edit-genre').value
@@ -165,20 +159,6 @@ async function main() {
 
 				showEditForm.classList.toggle('hidden');
 			}
-
-				//
-				// // Get reference to the card we want to edit
-				// // Use an attribute selector to do this
-				// const cardToEdit = document.querySelector(`[data-id="${cardId}"]`);
-				//
-				// // Change the card content
-				// cardToEdit.querySelector("h2").innerText = newTitle;
-				// cardToEdit.querySelector("img").setAttribute("src", newImageLink);
-				// cardToEdit.querySelector("p").innerText = newDescription;
-				//
-				// // Close the modal
-				// document.querySelector("#editCardModalWrapper").click();
-			// }
 		});
 	}
 
