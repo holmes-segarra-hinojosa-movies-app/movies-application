@@ -4,6 +4,7 @@
 	--card-border-color: rgba(26, 26, 26, 0.24);
 	--btn-border-color: rgba(109, 114, 113, 0.76);
 	--delete-btn-bg-color: #ec4e4e;
+	--edit-btn-bg-color: #519051;
 	--card-bg-color: rgba(255, 255, 255, 0.27);
 	--header-bg-color: rgba(237, 234, 234, 0.98);
 	--form-bg-color: #1a1a1a;
@@ -110,13 +111,28 @@
 	gap: 30px;
 }
 
+/*****EDIT BUTTON*****/
+.btn-div button:nth-child(1) {
+	border-color: var(--edit-btn-bg-color);
+}
+
+.btn-div button:nth-child(1):hover {
+	background-color: var(--edit-btn-bg-color);
+}
+
+/*****DELETE BUTTON*****/
+.btn-div button:nth-child(2) {
+	border-color: var(--delete-btn-bg-color);
+}
+
+.btn-div button:nth-child(2):hover {
+	background-color: var(--delete-btn-bg-color);
+}
+
 .card button {
 	width: 5rem;
 }
 
-.delete-btn {
-	border-color: var(--delete-btn-bg-color);
-}
 
 /*IDs*/
 
