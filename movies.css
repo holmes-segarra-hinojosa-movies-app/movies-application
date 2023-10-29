@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,300&display=swap');
 
 :root {
-	--card-border-color: rgba(115, 182, 199, 0.24);
+	--card-border-color: rgba(26, 26, 26, 0.24);
 	--btn-border-color: rgba(109, 114, 113, 0.76);
 	--delete-btn-bg-color: #ec4e4e;
 	--card-bg-color: rgba(255, 255, 255, 0.27);
@@ -88,10 +88,16 @@
 }
 .card {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 20px;
 	height: 400px;
 	width: 440px;
+	padding: 20px;
+	margin: 10px;
 	border: 2px solid var(--card-border-color);
-	border-radius: 1rem;
+	border-radius: .5rem;
 	background-color: var(--card-bg-color);
 }
 
@@ -118,10 +124,6 @@
 	position: absolute;
 	top: 25%;
 	left: auto;
-	z-index: 1;
-}
-
-#add-form {
 	z-index: 1;
 }
 
@@ -181,7 +183,7 @@ form.modify {
 	padding: 20px;
 	gap: 20px;
 	border: 2px solid var(--card-border-color);
-	border-radius: 3rem;
+	border-radius: 1rem;
 	background-color: var(--form-bg-color);
 	color: var(--form-text-color);
 }

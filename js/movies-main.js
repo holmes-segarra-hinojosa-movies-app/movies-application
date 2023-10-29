@@ -36,8 +36,8 @@ async function main() {
 
 
 		showTitle.innerText = title;
-		showGenre.innerText = genre
-		showRating.innerText = rating;
+		showGenre.innerText = `Genre: ${genre}`;
+		showRating.innerText = `Rating: ${rating}`;
 		showSummary.innerText = summary;
 
 		newCard.appendChild(showTitle)
@@ -51,9 +51,12 @@ async function main() {
 		btnDivEdit.classList.add('btn-div', `btn-div-${[i]}`)
 		btnEdit.appendChild(btnDivEdit)
 
+		// TODO FIX EDIT FUNCTIONALITY *********
 		let makeEditBtn = document.createElement('button')
 		makeEditBtn.classList.add('edit-btn',`edit-btn-${[i]}`)
-		makeEditBtn.setAttribute('data', `${id}`)
+		// makeEditBtn.setAttribute('data', `${id}`)
+		makeEditBtn.setAttribute('data-id', `${allMovies[i].id}`)
+
 		makeEditBtn.innerText = 'Edit';
 		btnDivEdit.appendChild(makeEditBtn)
 
@@ -92,9 +95,9 @@ async function main() {
 	})
 
 	///////////////EDIT MOVIE
-
+// TODO FIX EDIT FUNCTIONALITY *********
 	let showEditForm = document.querySelector('#edit-form')
-	for(let i=0; i < allMovies.length; i++) {
+	for(let i= 0; i < allMovies.length; i++) {
 		let id = allMovies[i].id
 		let title = allMovies[i].title
 		let genre = allMovies[i].genre
@@ -103,8 +106,9 @@ async function main() {
 		let poster = allMovies[i].posterURL
 
 
-
+// TODO FIX EDIT FUNCTIONALITY
 		let editMovieBtn = document.querySelector(`.edit-btn-${[i]}`)
+		// let editMovieBtn = document.querySelector(`[data-id]`)
 		editMovieBtn.addEventListener('click', async function () {
 
 			alert('click' + `edit btn #${[i]}`)
