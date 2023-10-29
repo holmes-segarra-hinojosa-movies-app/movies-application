@@ -33,6 +33,10 @@ async function main() {
 		showRating.setAttribute('class', `rating-${i}`)
 		let showSummary = document.createElement('p')
 		showRating.setAttribute('class', `summary-${i}`)
+		newCard.dataset.id = id;
+
+
+
 
 
 		showTitle.innerText = title;
@@ -51,11 +55,10 @@ async function main() {
 		btnDivEdit.classList.add('btn-div', `btn-div-${[i]}`)
 		btnEdit.appendChild(btnDivEdit)
 
-		// TODO FIX EDIT FUNCTIONALITY *********
 		let makeEditBtn = document.createElement('button')
 		makeEditBtn.classList.add('edit-btn',`edit-btn-${[i]}`)
 		// makeEditBtn.setAttribute('data', `${id}`)
-		makeEditBtn.setAttribute('data-id', `${allMovies[i].id}`)
+		makeEditBtn.setAttribute('data-id', `${id}`)
 
 		makeEditBtn.innerText = 'Edit';
 		btnDivEdit.appendChild(makeEditBtn)
@@ -95,15 +98,14 @@ async function main() {
 	})
 
 	///////////////EDIT MOVIE
-// TODO FIX EDIT FUNCTIONALITY *********
 	let showEditForm = document.querySelector('#edit-form')
 	for(let i= 0; i < allMovies.length; i++) {
-		// let id = allMovies[i].id
-		// let title = allMovies[i].title
-		// let genre = allMovies[i].genre
-		// let rating = allMovies[i].rating
-		// let summary = allMovies[i].movieSummary
-		// let poster = allMovies[i].posterURL
+		let id = allMovies[i].id
+		let title = allMovies[i].title
+		let genre = allMovies[i].genre
+		let rating = allMovies[i].rating
+		let summary = allMovies[i].movieSummary
+		let poster = allMovies[i].posterURL
 
 
 		let editMovieBtn = document.querySelector(`.edit-btn-${[i]}`)
@@ -111,19 +113,84 @@ async function main() {
 		editMovieBtn.addEventListener('click', async function (event) {
 			showEditForm.classList.toggle('hidden')
 			let editCard = event.target.parentElement.parentElement;
+
 			console.log(editCard);
 
 			let titleEdit = document.querySelector('#edit-title')
 			let genreEdit = document.querySelector('#edit-genre')
 			let ratingEdit = document.querySelector('#edit-rating')
 			let summaryEdit = document.querySelector('#edit-summary')
+			// let idEdit = document.querySelector('#edit-id')
+			let id = editCard.dataset.id;
+
+
+			showEditForm[1].value = titleEdit
+			showEditForm[2].value = genreEdit
+			showEditForm[3].value = ratingEdit
+			showEditForm[4].value = summaryEdit
+			showEditForm[5].value = id
+
+
 
 			titleEdit.value = editCard.querySelector('h3').innerText
 			genreEdit.value = editCard.querySelector(`p.genre-${[i]}`).innerText
 			ratingEdit.value = editCard.querySelector('p:nth-of-type(2)').innerText
 			summaryEdit.value = editCard.querySelector('p:last-of-type').innerText
-		})
+			// id = editCard.querySelector()
+			// console.log(id);
+
+
+
+///////////////SAVE EDIT OF MOVIE
+			let submitEditBtn = document.querySelector('.submit-btn')
+			submitEditBtn.addEventListener('click', saveEditedInfo)
+
+			function saveEditedInfo(event) {
+				event.preventDefault();
+				alert('hi');
+				let idEdit = document.querySelector('#edit-id').value
+				let newTitle = document.querySelector('#edit-title').value
+				let newGenre = document.querySelector('#edit-genre').value
+				let newRating = document.querySelector('#edit-rating').value
+				let newSummary = document.querySelector('#edit-summary').value
+
+				let editCard = document.querySelector(`[data-id='${id}`);
+				console.log(editCard);
+				console.log(idEdit);
+
+				editCard.querySelector('h3').innerText = newTitle;
+				editCard.querySelector(`p.genre-${[i]}`).innerText = newGenre;
+				editCard.querySelector('p:nth-of-type(2)').innerText = newRating;
+				editCard.querySelector('p:last-of-type').innerText = newSummary;
+
+				showEditForm.classList.toggle('hidden');
+			}
+
+				//
+				// // Get reference to the card we want to edit
+				// // Use an attribute selector to do this
+				// const cardToEdit = document.querySelector(`[data-id="${cardId}"]`);
+				//
+				// // Change the card content
+				// cardToEdit.querySelector("h2").innerText = newTitle;
+				// cardToEdit.querySelector("img").setAttribute("src", newImageLink);
+				// cardToEdit.querySelector("p").innerText = newDescription;
+				//
+				// // Close the modal
+				// document.querySelector("#editCardModalWrapper").click();
+			// }
+		});
 	}
+
+
+
+
+
+
+
+
+
+
 
 	for(let i= 0; i < allMovies.length; i++) {
 		let deleteMovieButton = document.querySelector(`.delete-btn-${[i]}`)

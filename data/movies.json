@@ -84,10 +84,10 @@
       "id": 12
     },
     {
-      "title": "A Damn Good Movie",
-      "genre": "drama",
+      "title": "here's another one",
+      "genre": "science fiction ",
       "rating": "10",
-      "movieSummary": "A movie with a damn good plot",
+      "movieSummary": "sad",
       "id": 13
     }
   ]
