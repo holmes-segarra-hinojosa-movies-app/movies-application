@@ -197,16 +197,9 @@ async function main() {
 
 
 
-
-
-
-
-
-
-
+//////////////////DELETE MOVIE
 	for(let i= 0; i < allMovies.length; i++) {
 		let deleteMovieButton = document.querySelector(`.delete-btn-${[i]}`)
-		//DELETE MOVIE
 		deleteMovieButton.addEventListener('click', async function () {
 			let id = allMovies[i].id
 
