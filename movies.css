@@ -218,3 +218,7 @@ li {
 li textarea {
 	resize: none;
 }
+
+img {
+	height: 2rem;
+}

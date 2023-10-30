@@ -34,6 +34,9 @@ async function main() {
 		let showSummary = document.createElement('p')
 		showRating.setAttribute('class', `summary-${i}`)
 		newCard.dataset.id = id;
+		let showPoster = document.createElement('img')
+		showPoster.setAttribute('class', `poster-${i}`)
+		showPoster.setAttribute('src', `${poster}`)
 
 
 
@@ -43,11 +46,13 @@ async function main() {
 		showGenre.innerText = `Genre: ${genre}`;
 		showRating.innerText = `Rating: ${rating}`;
 		showSummary.innerText = summary;
+		// showPoster.innerHTML = poster;
 
 		newCard.appendChild(showTitle)
 		newCard.appendChild(showGenre)
 		newCard.appendChild(showRating)
 		newCard.appendChild(showSummary)
+		newCard.appendChild(showPoster)
 
 		let btnEdit = document.querySelector(`.card-${[i]}`)
 
