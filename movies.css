@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,300&display=swap');
 
 :root {
-	--card-border-color: rgba(115, 182, 199, 0.24);
+	--card-border-color: rgba(26, 26, 26, 0.24);
 	--btn-border-color: rgba(109, 114, 113, 0.76);
 	--delete-btn-bg-color: #ec4e4e;
+	--edit-btn-bg-color: #519051;
 	--card-bg-color: rgba(255, 255, 255, 0.27);
 	--header-bg-color: rgba(237, 234, 234, 0.98);
 	--form-bg-color: #1a1a1a;
 	--form-text-color: #fbf9f9;
+	--background-gradient-top: #f3593f;
+	--background-gradient-bottom: rgb(222, 222, 9);
 }
 
 * {
@@ -22,18 +25,7 @@
 
 .page-wrapper {
 	min-height: 100dvh;
-}
-
-.page-wrapper::before {
-	content: "";
-	background-image: url("img/movie-theater.jpg");
-	background-position: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0.65;
+	background-image: linear-gradient(var(--background-gradient-top), var(--background-gradient-bottom));
 }
 
 .container {
@@ -88,10 +80,16 @@
 }
 .card {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 20px;
 	height: 400px;
 	width: 440px;
+	padding: 20px;
+	margin: 10px;
 	border: 2px solid var(--card-border-color);
-	border-radius: 1rem;
+	border-radius: .5rem;
 	background-color: var(--card-bg-color);
 }
 
@@ -104,13 +102,28 @@
 	gap: 30px;
 }
 
+/*****EDIT BUTTON*****/
+.btn-div button:nth-child(1) {
+	border-color: var(--edit-btn-bg-color);
+}
+
+.btn-div button:nth-child(1):hover {
+	background-color: var(--edit-btn-bg-color);
+}
+
+/*****DELETE BUTTON*****/
+.btn-div button:nth-child(2) {
+	border-color: var(--delete-btn-bg-color);
+}
+
+.btn-div button:nth-child(2):hover {
+	background-color: var(--delete-btn-bg-color);
+}
+
 .card button {
 	width: 5rem;
 }
 
-.delete-btn {
-	border-color: var(--delete-btn-bg-color);
-}
 
 /*IDs*/
 
@@ -118,7 +131,6 @@
 	position: absolute;
 	top: 25%;
 	left: auto;
-	z-index: 1;
 }
 
 #add-form {
@@ -181,7 +193,7 @@ form.modify {
 	padding: 20px;
 	gap: 20px;
 	border: 2px solid var(--card-border-color);
-	border-radius: 3rem;
+	border-radius: 1rem;
 	background-color: var(--form-bg-color);
 	color: var(--form-text-color);
 }
