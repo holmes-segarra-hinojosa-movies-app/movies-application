@@ -84,8 +84,10 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 20px;
-	height: 400px;
-	width: 440px;
+	/*height: 400px;*/
+	height: 28rem;
+	/*width: 440px;*/
+	width: 20rem;
 	padding: 20px;
 	margin: 10px;
 	border: 2px solid var(--card-border-color);
@@ -122,6 +124,11 @@
 
 .card button {
 	width: 5rem;
+}
+
+.poster-div {
+	display: flex;
+	justify-content: center;
 }
 
 
@@ -220,5 +227,6 @@ li textarea {
 }
 
 img {
-	height: 2rem;
+	width: 130px;
+	height: auto;
 }

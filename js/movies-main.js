@@ -34,11 +34,19 @@ async function main() {
 		let showSummary = document.createElement('p')
 		showRating.setAttribute('class', `summary-${i}`)
 		newCard.dataset.id = id;
+
+
+
+		let divImg = document.createElement('div')
+		divImg.classList.add('poster-div', `poster-div-${[i]}`)
+		newCard.appendChild(divImg)
+
+		let grabImgDiv = document.querySelector(`.poster-div-${[i]}`)
 		let showPoster = document.createElement('img')
+
 		showPoster.setAttribute('class', `poster-${i}`)
 		showPoster.setAttribute('src', `${poster}`)
-
-
+		grabImgDiv.appendChild(showPoster)
 
 
 
@@ -52,7 +60,7 @@ async function main() {
 		newCard.appendChild(showGenre)
 		newCard.appendChild(showRating)
 		newCard.appendChild(showSummary)
-		newCard.appendChild(showPoster)
+		// newCard.appendChild(showPoster)
 
 		let btnEdit = document.querySelector(`.card-${[i]}`)
 
