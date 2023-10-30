@@ -46,6 +46,7 @@ async function main() {
 
 		showPoster.setAttribute('class', `poster-${i}`)
 		showPoster.setAttribute('src', `${poster}`)
+		showPoster.setAttribute('alt', `${title}-poster`)
 		grabImgDiv.appendChild(showPoster)
 
 
