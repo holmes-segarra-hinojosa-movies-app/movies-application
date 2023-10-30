@@ -93,23 +93,34 @@ async function main() {
 		showAddForm.classList.toggle("hidden");
 	})
 
-	let addMovieBtn = document.querySelector('.add-btn')
-	addMovieBtn.addEventListener('click', async function(){
-		let title = document.querySelector('#add-title').value
-		let genre = document.querySelector('#add-genre').value
-		let rating = document.querySelector('#add-rating').value
-		let movieSummary = document.querySelector('#add-summary').value
+	let exitAdd = document.querySelector('.exit-add-btn')
+	exitAdd.addEventListener('click', async function(){
+		if(exitAdd){
+			showAddForm.classList.toggle('hidden')
+		} else {
+			let addMovieBtn = document.querySelector('.add-btn')
+			addMovieBtn.addEventListener('click', async function(){
+				let title = document.querySelector('#add-title').value
+				let genre = document.querySelector('#add-genre').value
+				let rating = document.querySelector('#add-rating').value
+				let movieSummary = document.querySelector('#add-summary').value
 
-		await creatMovie({
-			title: title,
-			genre: genre,
-			rating: rating,
-			movieSummary: movieSummary,
-		})
+				await creatMovie({
+					title: title,
+					genre: genre,
+					rating: rating,
+					movieSummary: movieSummary,
+				})
+			})
+
+		}
 	})
+
 
 	///////////////EDIT MOVIE
 	let showEditForm = document.querySelector('#edit-form')
+
+
 	for(let i= 0; i < allMovies.length; i++) {
 		let id = allMovies[i].id
 		let title = allMovies[i].title
@@ -120,6 +131,13 @@ async function main() {
 
 
 		let editMovieBtn = document.querySelector(`.edit-btn-${[i]}`)
+
+
+		let exitEdit = document.querySelector('.exit-edit-btn')
+		exitEdit.addEventListener('click', async function(){
+			if (exitEdit) {
+				showEditForm.classList.toggle('hidden')
+			}})
 
 		editMovieBtn.addEventListener('click', async function (event) {
 			showEditForm.classList.toggle('hidden')
